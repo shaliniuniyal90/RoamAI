@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1a1a1a;
+  --color-paper: #faf6ee;
+  --color-paper-border: #e8e1d3;
+  --color-journal: #0b3d2e;
+  --color-journal-light: #3d7a5c;
+  --color-journal-deep: #082b20;
+  --color-amber: #f2a65a;
+  --color-amber-soft: #f8c98a;
+  --color-amber-deep: #d4863f;
+  --color-canvas: #f6f3ea;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", system-ui, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
+
+  --animate-fade-slide: fade-slide 0.4s ease-out both;
+  --animate-stamp-in: stamp-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.3) rotate(-8deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.96) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(-2deg);
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(circle at 1px 1px, rgba(11, 61, 46, 0.06) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-paper-border);
+    border-radius: 8px;
+  }
+}
+
+@layer utilities {
+  .perforated-edge {
+    background-image: radial-gradient(circle at 6px center, var(--color-canvas) 6px, transparent 6.5px);
+    background-size: 16px 100%;
+    background-repeat: repeat-x;
+    height: 12px;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum";
+  }
+}
