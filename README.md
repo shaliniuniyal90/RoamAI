@@ -2,6 +2,8 @@
 
 RoamAI is a full-stack web application that generates personalized, day-by-day travel itineraries using Google's Gemini AI. Users input their destination, trip duration, budget, and travel preferences, and the app returns a complete, structured itinerary with cost estimates.
 
+**🔗 Live Demo:** [https://roam-ai-weld.vercel.app](https://roam-ai-weld.vercel.app)
+
 ## ✨ Features
 
 - **3-Step Guided Form** — Collects destination, trip length, budget tier, and travel vibes through an intuitive multi-step wizard
@@ -23,5 +25,9 @@ RoamAI is a full-stack web application that generates personalized, day-by-day t
 - Node.js + Express.js
 - Google Generative AI SDK (`@google/generative-ai`)
 - CORS, dotenv
+
+**Deployment:**
+- Frontend hosted on Vercel
+- Backend hosted on Render
 
 ## 📂 Project Structure
